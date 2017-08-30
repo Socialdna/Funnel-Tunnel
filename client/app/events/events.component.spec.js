@@ -7,11 +7,12 @@ import {
 
 describe('Component: EventsController', function() {
   // load the controller's module
-  //beforeEach(module('funnelTunnelApp.events'));
+  // beforeEach(module('funnelTunnelApp.events'));
+    beforeEach(module('events'));
   //beforeEach(module('stateMock'));
   //beforeEach(module('socketMock'));
 
-  beforeEach(angular.mock.module(events));
+  // beforeEach(angular.mock.module(events));
   beforeEach(angular.mock.module('stateMock'));
   beforeEach(angular.mock.module('socketMock'));
     
