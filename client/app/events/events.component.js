@@ -1,26 +1,23 @@
-'use strict';
-const angular = require('angular');
-
-const uiRouter = require('angular-ui-router');
-
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 import routing from './events.routes';
 
 export class EventsController {
-    awesomeThings = [];
-    newThing = '';
+  awesomeThings = [];
+  newThing = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
-      this.$http = $http;
-      this.socket =  socket;
-      
-      $scope.$on('destroy', function(){
-          socket.unsyncUpdates('thing');
-      });
+    this.$http = $http;
+    this.socket = socket;
+
+    $scope.$on('$destroy', function(){
+      socket.unsyncUpdates('thing');
+    });
     this.message = 'Hello';
   }
 
-$onInit() {
+  $onInit() {
     this.$http.get('/api/things')
       .then(response => {
         this.awesomeThings = response.data;
@@ -40,14 +37,12 @@ $onInit() {
   deleteThing(thing) {
     this.$http.delete(`/api/things/${thing._id}`);
   }
-
 }
 
 export default angular.module('funnelTunnelApp.events', [uiRouter])
   .config(routing)
   .component('events', {
     template: require('./events.html'),
-    controller: EventsController,
-    controllerAs: 'eventsCtrl'
+    controller: EventsController
   })
   .name;
