@@ -3,8 +3,8 @@ import uiRouter from 'angular-ui-router';
 import routing from './events.routes';
 
 export class EventsController {
-  awesomeThings = [];
-  newThing = '';
+  awesomeEvents = [];
+  newEvent = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -12,30 +12,30 @@ export class EventsController {
     this.socket = socket;
 
     $scope.$on('$destroy', function(){
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('event');
     });
     this.message = 'Hello';
   }
 
   $onInit() {
-    this.$http.get('/api/things')
+    this.$http.get('/api/events')
       .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
+        this.awesomeEvents = response.data;
+        this.socket.syncUpdates('event', this.awesomeEvents);
       });
   }
 
-  addThing() {
-    if(this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
+  addEvent() {
+    if(this.newEvent) {
+      this.$http.post('/api/events', {
+        name: this.newEvent
       });
-      this.newThing = '';
+      this.newEvent = '';
     }
   }
 
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
+  deleteEvent(event) {
+    this.$http.delete(`/api/events/${event._id}`);
   }
 }
 

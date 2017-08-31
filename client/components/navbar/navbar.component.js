@@ -7,6 +7,9 @@ export class NavbarComponent {
   menu = [{
     title: 'Funnel Tunnel',
     state: 'main'
+  }, {
+      title: 'Events',
+      state: 'events'
   }];
 
   isCollapsed = true;
