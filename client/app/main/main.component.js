@@ -7,34 +7,17 @@ export class MainController {
   newEvent = '';
 
   /*@ngInject*/
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, socket, Auth) {
+    'ngInject';
     this.$http = $http;
     this.socket = socket;
+    this.isLoggedIn = Auth.isLoggedInSync;
+    this.isAdmin = Auth.isAdminSync;
+    this.getCurrentUser = Auth.getCurrentUserSync;
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('event');
     });
-  }
-
-  $onInit() {
-    this.$http.get('/api/events')
-      .then(response => {
-        this.awesomeEvents = response.data;
-        this.socket.syncUpdates('event', this.awesomeEvents);
-      });
-  }
-
-  addEvent() {
-    if(this.newEvent) {
-      this.$http.post('/api/events', {
-        name: this.newEvent
-      });
-      this.newEvent = '';
-    }
-  }
-
-  deleteEvent(event) {
-    this.$http.delete(`/api/events/${event._id}`);
   }
 }
 
@@ -43,5 +26,6 @@ export default angular.module('funnelTunnelApp.main', [uiRouter])
   .component('main', {
     template: require('./main.html'),
     controller: MainController
+
   })
   .name;
