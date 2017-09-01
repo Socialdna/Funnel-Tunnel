@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-12" style=padding:50px;>
       <ul class="nav nav-tabs nav-stacked nav-justified col-md-4 col-lg-4 col-sm-6" ng-repeat="event in $ctrl.awesomeEvents">
-        <li><a href="#" uib-tooltip="{{event.info}}">{{event.name}}<button type="button" class="close" ng-click="$ctrl.deleteEvent(event)">&times;</button></a></li>
+        <li><a href="#" uib-tooltip="{{event.description}}">{{event.start.DateTime | date : "short"}} | {{event.summary}} | {{event.location}}<button type="button" class="close" ng-click="$ctrl.deleteEvent(event)">&times;</button></a></li>
       </ul>
     </div>
   </div>

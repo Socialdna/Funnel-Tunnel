@@ -13,32 +13,65 @@ export default function seedDatabaseIfNeeded() {
     Event.find({}).remove()
       .then(() => {
         let event = Event.create({
-          name: 'Development Tools',
-          info: 'Integration with popular tools such as Webpack, Gulp, Babel, TypeScript, Karma, '
-                + 'Mocha, ESLint, Node Inspector, Livereload, Protractor, Pug, '
-                + 'Stylus, Sass, and Less.'
+          summary: 'Sunshine Winery',
+          description: 'Try our delicious dishes at the tasting room at  '
+                + 'Sunshine Winery ',
+          location:  '123 Main Street, San Diego, CA',
+          start: {
+              Date: '2017-10-22T11:00:00-07:00',
+              DateTime: '2017-10-22T11:00:00-07:00',
+              timeZone: 'pacific'
+          },
+          end: {
+              Date: '2017-10-22T11:00:00-09:00',
+              DateTime: '2017-10-22T11:00:00-09:00',
+              timeZone:  'pacific'
+          }
         }, {
-          name: 'Server and Client integration',
-          info: 'Built with a powerful and fun stack: MongoDB, Express, '
-                + 'AngularJS, and Node.'
+          summary: 'Temecula Winery',
+          description: 'Try our delicious dishes at the tasting room at  '
+                + 'Temecula Winery',
+          location:  '123 Main Street, Temecula, CA',
+          start: {
+              DateTime: '2017-10-24T11:00:00-07:00'},
+          end: {
+              DateTime: '2017-10-24T11:00:00-09:00'}
         }, {
-          name: 'Smart Build System',
-          info: 'Build system ignores `spec` files, allowing you to keep '
-                + 'tests alongside code. Automatic injection of scripts and '
-                + 'styles into your index.html'
+          summary: 'Mega Brewery',
+          description: 'Try our delicious dishes at the tasting room at  '
+                + 'Mega Brewery',
+          location:  '123 First Street, San Diego, CA',
+          start: {
+              DateTime: '2017-11-02T11:00:00-07:00'},
+          end: {
+              DateTime: '2017-11-02T11:00:00-09:00'}
         }, {
-          name: 'Modular Structure',
-          info: 'Best practice client and server structures allow for more '
-                + 'code reusability and maximum scalability'
+          summary: 'Valley View Apartments',
+          description: 'Try our delicious dishes at the clubhouse at  '
+                + 'Valley View apartments',
+          location:  '23345 Carmel Creek Road, Del Mar, CA',
+          start: {
+              DateTime: '2017-11-04T11:00:00-07:00'},
+          end: {
+              DateTime: '2017-11-04T11:00:00-11:00'}
         }, {
-          name: 'Optimized Build',
-          info: 'Build process packs up your templates as a single JavaScript '
-                + 'payload, minifies your scripts/css/images, and rewrites asset '
-                + 'names for caching.'
+          summary: 'Beer Festival',
+          description: 'Try our delicious food that goes perfectly with beer '
+                + 'at the center stage of the Beer Festival',
+          location:  '456 Front Street, San Diego, CA',
+          start: {
+              DateTime: '2017-11-12T11:00:00-09:00'},
+          end: {
+              DateTime: '2017-11-12T11:00:00-09:00'}
         }, {
-          name: 'Deployment Ready',
-          info: 'Easily deploy your app to Heroku or Openshift with the heroku '
-                + 'and openshift subgenerators'
+          summary: 'Restaurant Week',
+          description: 'Try our delicious food at the heart of Gaslamp Quarter '
+                + 'during the Restaurant Week',
+          location:  '344 Fifth Avenue, San Diego, CA',
+          start: {
+              DateTime: '2017-11-22T11:00:00-10:00'},
+          end: {
+              DateTime: '2017-11-22T11:00:00-13:00'}
         });
         return event;
       })
