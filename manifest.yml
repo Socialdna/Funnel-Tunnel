@@ -1,0 +1,8 @@
+---
+applications:
+- name: funnel-tunnel
+  memory: 512M
+  disk_quota: 512M
+  buildpack: nodejs_buildpack
+  domain: mybluemix.net
+  command: node server/app.js
