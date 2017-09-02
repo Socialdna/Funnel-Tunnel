@@ -1253,9 +1253,9 @@ chai-jquery@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/chai-jquery/-/chai-jquery-2.0.0.tgz#0f43042308dd746332bd98164aaef4a4f45ba167"
 
-chai-events@^0.2.0:
+chai-things@^0.2.0:
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/chai-events/-/chai-events-0.2.0.tgz#c55128378f9bb399e994f00052151984ed6ebe70"
+  resolved "https://registry.yarnpkg.com/chai-things/-/chai-things-0.2.0.tgz#c55128378f9bb399e994f00052151984ed6ebe70"
 
 chai@^3.2.0, chai@^3.4.1:
   version "3.5.0"
@@ -4682,7 +4682,7 @@ karma-chai-plugins@~0.7.0:
     chai-as-promised "^5.1.0"
     chai-dom "^1.2.2"
     chai-jquery "^2.0.0"
-    chai-events "^0.2.0"
+    chai-things "^0.2.0"
     sinon "^1.17.2"
     sinon-chai "^2.8.0"
 
