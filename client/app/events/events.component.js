@@ -4,7 +4,7 @@ import routing from './events.routes';
 
 export class EventsController {
   awesomeEvents = [];
-  newEvent = '';
+  newEvent = {};
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -28,7 +28,12 @@ export class EventsController {
   addEvent() {
     if(this.newEvent) {
       this.$http.post('/api/events', {
-        name: this.newEvent
+        summary: this.newEvent.summary,
+        description: this.newEvent.description,
+        location: this.newEvent.location,
+//      start: {
+//          DateTime: this.newEvent
+//      }        
       });
       this.newEvent = '';
     }
