@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+var EventEmitter = require('events');
 var UserEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)

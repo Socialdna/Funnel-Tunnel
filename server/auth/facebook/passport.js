@@ -1,7 +1,7 @@
-import passport from 'passport';
-import {Strategy as FacebookStrategy} from 'passport-facebook';
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook');
 
-export function setup(User, config) {
+module.exports = function setup(User, config) {
   passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,

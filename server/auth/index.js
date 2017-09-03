@@ -1,7 +1,7 @@
 'use strict';
-import express from 'express';
-import config from '../config/environment';
-import User from '../api/user/user.model';
+var express = require('express');
+var config = require('../config/environment');
+var User = require('../api/user/user.model');
 
 // Passport Configuration
 require('./local/passport').setup(User, config);
@@ -16,4 +16,4 @@ router.use('/facebook', require('./facebook').default);
 router.use('/twitter', require('./twitter').default);
 router.use('/google', require('./google').default);
 
-export default router;
+module.exports;

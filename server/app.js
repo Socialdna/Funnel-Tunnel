@@ -38,7 +38,7 @@ var socketio = require('socket.io')(server, {
   path: '/socket.io-client'
 });
 require('./config/socketio').default(socketio);
-require('./config/express').default(app);
+require('./config/express')(app);
 require('./routes').default(app);
 
 // Start server
@@ -52,4 +52,4 @@ seedDatabaseIfNeeded();
 setImmediate(startServer);
 
 // Expose app
-exports = module.exports = app;
+module.exports;

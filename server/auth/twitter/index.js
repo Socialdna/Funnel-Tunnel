@@ -1,8 +1,8 @@
 'use strict';
 
-import express from 'express';
-import passport from 'passport';
-import {setTokenCookie} from '../auth.service';
+var express = require('express');
+var passport = require('passport');
+var setTokenCookie = require('../auth.service');
 
 var router = express.Router();
 
@@ -16,4 +16,4 @@ router
     session: false
   }), setTokenCookie);
 
-export default router;
+module.exports;

@@ -1,7 +1,7 @@
-import passport from 'passport';
-import {Strategy as TwitterStrategy} from 'passport-twitter';
+var passport = require('passport');
+var TwitterStrategy = require('passport-twitter');
 
-export function setup(User, config) {
+module.exports = function setup(User, config) {
   passport.use(new TwitterStrategy({
     consumerKey: config.twitter.clientID,
     consumerSecret: config.twitter.clientSecret,

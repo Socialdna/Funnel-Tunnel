@@ -4,24 +4,24 @@
 
 'use strict';
 
-import express from 'express';
-import favicon from 'serve-favicon';
-import morgan from 'morgan';
-import shrinkRay from 'shrink-ray';
-import bodyParser from 'body-parser';
-import methodOverride from 'method-override';
-import cookieParser from 'cookie-parser';
-import errorHandler from 'errorhandler';
-import path from 'path';
-import lusca from 'lusca';
-import config from './environment';
-import passport from 'passport';
-import session from 'express-session';
-import connectMongo from 'connect-mongo';
-import mongoose from 'mongoose';
+var express = require('express');
+var favicon = require('serve-favicon');
+var morgan = require('morgan');
+var shrinkRay = require('shrink-ray');
+var bodyParser = require('body-parser');
+var methodOverride = require ('method-override');
+var cookieParser = require('cookie-parser');
+var errorHandler = require ('errorhandler');
+var path = require('path');
+var lusca = require('lusca');
+var config = require('./environment');
+var passport = require('passport');
+var session = require('express-session');
+var connectMongo = require('connect-mongo');
+var mongoose = require('mongoose');
 var MongoStore = connectMongo(session);
 
-export default function(app) {
+module.exports = function(app) {
   var env = app.get('env');
 
   if(env === 'development' || env === 'test') {
