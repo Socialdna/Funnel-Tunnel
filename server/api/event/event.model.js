@@ -1,7 +1,7 @@
 'use strict';
 
-import mongoose from 'mongoose';
-import {registerEvents} from './event.events';
+var mongoose = require('mongoose');
+var registerEvents = require('./event.events');
 
 var EventSchema = new mongoose.Schema({
   "kind": String,
@@ -113,4 +113,5 @@ var EventSchema = new mongoose.Schema({
 });
 
 registerEvents(EventSchema);
-export default mongoose.model('Event', EventSchema);
+module.exports;
+// export default mongoose.model('Event', EventSchema);

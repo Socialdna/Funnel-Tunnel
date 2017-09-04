@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+var EventEmitter = require('events');
 var EventEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
@@ -31,5 +31,7 @@ function emitEvent(event) {
   };
 }
 
-export {registerEvents};
-export default EventEvents;
+module.exports;
+
+// export {registerEvents};
+// export default EventEvents;

@@ -256,4 +256,5 @@ UserSchema.methods = {
 };
 
 registerEvents(UserSchema);
-export default mongoose.model('User', UserSchema);
+module.exports;
+//export default mongoose.model('User', UserSchema);

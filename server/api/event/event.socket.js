@@ -4,12 +4,12 @@
 
 'use strict';
 
-import EventEvents from './event.events';
+var EventEvents = require('./event.events');
 
 // Model events to emit
 var events = ['save', 'remove'];
 
-export function register(socket) {
+module.exports = function register(socket) {
   // Bind model events to socket events
   for(var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];

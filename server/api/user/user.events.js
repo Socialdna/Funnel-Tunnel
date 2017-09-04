@@ -31,5 +31,8 @@ function emitEvent(event) {
   };
 }
 
+module.exports;
+/*
 export {registerEvents};
 export default UserEvents;
+*/

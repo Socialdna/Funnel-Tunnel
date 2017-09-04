@@ -10,8 +10,8 @@
 
 'use strict';
 
-import jsonpatch from 'fast-json-patch';
-import Event from './event.model';
+var jsonpatch = require('fast-json-patch');
+var Event = require('./event.model');
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -65,14 +65,14 @@ function handleError(res, statusCode) {
 }
 
 // Gets a list of Events
-export function index(req, res) {
+module.exports = function index(req, res) {
   return Event.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 // Gets a single Event from the DB
-export function show(req, res) {
+module.exports = function show(req, res) {
   return Event.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
@@ -80,14 +80,14 @@ export function show(req, res) {
 }
 
 // Creates a new Event in the DB
-export function create(req, res) {
+module.exports = function create(req, res) {
   return Event.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
 // Upserts the given Event in the DB at the specified ID
-export function upsert(req, res) {
+module.exports = function upsert(req, res) {
   if(req.body._id) {
     Reflect.deleteProperty(req.body, '_id');
   }
@@ -98,7 +98,7 @@ export function upsert(req, res) {
 }
 
 // Updates an existing Event in the DB
-export function patch(req, res) {
+module.exports = function patch(req, res) {
   if(req.body._id) {
     Reflect.deleteProperty(req.body, '_id');
   }
@@ -110,7 +110,7 @@ export function patch(req, res) {
 }
 
 // Deletes a Event from the DB
-export function destroy(req, res) {
+module.exports = function destroy(req, res) {
   return Event.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))

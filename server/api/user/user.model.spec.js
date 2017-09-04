@@ -1,8 +1,8 @@
 'use strict';
 
-import app from '../..';
-import User from './user.model';
-var user;
+var app = require('../..');
+var User = require('./user.model');
+
 var genUser = function() {
   user = new User({
     provider: 'local',
