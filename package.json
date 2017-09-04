@@ -139,13 +139,13 @@
     "webpack-stream": "^3.2.0"
   },
   "engines": {
-    "node": "8.2.1",
-    "npm": "5.3.0"
+    "node": "^8.2.1",
+    "npm": "^5.3.0"
   },
   "scripts": {
     "test": "gulp test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "start": "babel-node --presets es2015 app.js"
+    "start": "babel-node --presets es2015 server/app.js"
   },
   "private": true,
   "description": "This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.2.",
