@@ -142,7 +142,8 @@
   "scripts": {
     "test": "gulp test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "start": "babel-node --presets es2015 server/app.js"
+    "start": "babel-node --presets es2015 dist/server/app.js",
+    "start-dev": "NODE_ENV=development babel-node --presets es2015 server/app.js"
   },
   "private": true,
   "description": "This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.2.",
