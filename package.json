@@ -143,6 +143,7 @@
     "test": "gulp test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
     "start": "node dist/server/app.js",
+    "heroku-postbuild": "gulp build",
     "start-dev": "NODE_ENV=development babel-node --presets es2015 server/app.js"
   },
   "private": true,
