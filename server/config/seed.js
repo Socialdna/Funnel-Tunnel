@@ -4,11 +4,11 @@
  */
 
 'use strict';
-import Event from '../api/event/event.model';
-import User from '../api/user/user.model';
-import config from './environment/';
+var Event = require( '../api/event/event.model');
+var User = require('../api/user/user.model');
+var config = require('./environment/');
 
-export default function seedDatabaseIfNeeded() {
+module.exports = function seedDatabaseIfNeeded() {
   if(config.seedDB) {
     Event.find({}).remove()
       .then(() => {
@@ -97,3 +97,4 @@ export default function seedDatabaseIfNeeded() {
       });
   }
 }
+
