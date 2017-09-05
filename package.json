@@ -142,7 +142,6 @@
   "scripts": {
     "test": "gulp test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "prestart": "npm install --dev --no-optional && gulp build",
     "start": "node dist/server/app.js",
     "start-dev": "NODE_ENV=development babel-node --presets es2015 server/app.js"
   },
